@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/DUO MECANICO LOGO.png';
+import logo from '../assets/img/Denta Vivido logo 1-8.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
@@ -8,9 +8,9 @@ import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import { FaWhatsapp, FaTools, FaMapMarkerAlt, FaInfoCircle } from 'react-icons/fa';
 
 export const NavBar = () => {
-
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
@@ -37,25 +37,31 @@ export const NavBar = () => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Duo Mecánico" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Informacion</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Donde Estamos </Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Que Hacemos</Nav.Link>
+              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>
+                <FaInfoCircle className="nav-icon" /> Información
+              </Nav.Link>
+              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>
+                <FaMapMarkerAlt className="nav-icon" /> Ubicación
+              </Nav.Link>
+              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>
+                <FaTools className="nav-icon" /> Servicios
+              </Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                {/* <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a> */}
-                <a href="#"><img src={navIcon3} alt="" /></a>
+                <a href="#"><img src={navIcon3} alt="Instagram" /></a>
               </div>
               <HashLink to='#connect'>
-                <button className="vvd"><span>Whats App</span></button>
+                <button className="vvd">
+                  <FaWhatsapp /> <span>WhatsApp</span>
+                </button>
               </HashLink>
             </span>
           </Navbar.Collapse>

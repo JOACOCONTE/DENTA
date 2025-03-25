@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/deo mecanico.png";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
+import headerImg from "../assets/img/Denta op-8.png";
+import { FaWhatsapp } from 'react-icons/fa';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Autos", "Motos", "Mecanica" ];
+  const toRotate = [ "Sonrisas", "Dientes", "Su Salud Bucal" ];
   const period = 2000;
 
   useEffect(() => {
@@ -50,15 +50,17 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">El Duo Mecanico</span>
-                <h1>{`Reparamos`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Autos", "Motos", "Mecanica" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>¡Bienvenido a nuestro taller mecánico! Ofrecemos servicios de reparación y mantenimiento para tu vehículo. Con personal experto y tecnología avanzada, garantizamos soluciones eficientes y de calidad para mantener tu automóvil en óptimas condiciones. Confía en nosotros para cuidar de tu vehículo como si fuera nuestro propio.</p>
-                  <button onClick={() => console.log('connect')}>WHATS APP <ArrowRightCircle size={25} /></button>
+                <span className="tagline">Expertos en Odontología</span>
+                <h1>Cuidamos y mejoramos <span className="txt-rotate" dataPeriod="1000"><span className="wrap">{text}</span></span></h1>
+                <p>Bienvenido a Denta Vivido, su clínica dental de confianza. Ofrecemos servicios profesionales para el cuidado y tratamiento de su salud bucal. Con odontólogos expertos y tecnología de vanguardia, garantizamos soluciones efectivas para una sonrisa radiante y saludable.</p>
+                <button onClick={() => window.open('https://wa.me/+5491122334455', '_blank')}>
+                  <FaWhatsapp /> Contactar por WhatsApp
+                </button>
               </div>}
             </TrackVisibility>
           </Col>
@@ -66,7 +68,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Taller Mecánico"/>
                 </div>}
             </TrackVisibility>
           </Col>

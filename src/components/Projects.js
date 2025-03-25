@@ -1,77 +1,95 @@
 import React from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.jpeg";
-import projImg2 from "../assets/img/project-img2.jpeg";
-import projImg3 from "../assets/img/project-img3.jpeg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+// Usando imágenes disponibles en el proyecto
+import projImg1 from "../assets/img/project-img1.jpeg";
+import projImg2 from "../assets/img/project-img2.jpeg";
+import projImg3 from "../assets/img/project-img3.jpeg";
+import dentaOp8 from "../assets/img/Denta op-8.png";
+import bannerBg from "../assets/img/banner-bg.png";
+import logoImg from "../assets/img/Denta Vivido logo 1-8.png";
+
 export const Projects = () => {
-  const autoProjects = [
+  const autosProjects = [
     {
-      title: "Auto Proyecto 1",
-      description: "Descripción del proyecto de autos 1",
+      title: "Limpieza Dental",
+      description: "Eliminación del sarro y manchas superficiales para mantener sus dientes limpios y saludables.",
       imgUrl: projImg1,
     },
     {
-      title: "Auto Proyecto 2",
-      description: "Descripción del proyecto de autos 2",
+      title: "Blanqueamiento Dental",
+      description: "Tratamientos de última generación para conseguir una sonrisa más blanca y brillante.",
       imgUrl: projImg2,
     },
     {
-      title: "Auto Proyecto 3",
-      description: "Descripción del proyecto de autos 3",
+      title: "Empastes Estéticos",
+      description: "Reparación de caries con materiales del color de sus dientes para una apariencia natural.",
       imgUrl: projImg3,
     },
     {
-      title: "Auto Proyecto 4",
-      description: "Descripción del proyecto de autos 3",
-      imgUrl: projImg3,
+      title: "Ortodoncia",
+      description: "Alineación y corrección de la posición de los dientes para mejorar su mordida y estética.",
+      imgUrl: projImg1,
     },
     {
-      title: "Auto Proyecto 5",
-      description: "Descripción del proyecto de autos 3",
-      imgUrl: projImg3,
+      title: "Prótesis Dentales",
+      description: "Soluciones para reemplazar dientes perdidos y recuperar su función y estética.",
+      imgUrl: projImg2,
     },
     {
-      title: "Auto Proyecto 6",
-      description: "Descripción del proyecto de autos 3",
+      title: "Periodoncia",
+      description: "Tratamiento y prevención de enfermedades de las encías para una boca saludable.",
       imgUrl: projImg3,
     },
   ];
 
-  const motoProjects = [
+  const motosProjects = [
     {
-      title: "Moto Proyecto 1",
-      description: "nanex",
+      title: "Odontopediatría",
+      description: "Atención especializada para niños, con un ambiente amigable y tratamientos adaptados.",
+      imgUrl: dentaOp8,
+    },
+    {
+      title: "Endodoncia",
+      description: "Tratamiento de conducto con las técnicas más avanzadas para eliminar el dolor y salvar el diente.",
       imgUrl: projImg1,
     },
     {
-      title: "Moto Proyecto 2",
-      description: "Descripción del proyecto de motos 2",
+      title: "Implantes Dentales",
+      description: "Sustitución permanente de raíces dentales para una sonrisa completa y funcional.",
       imgUrl: projImg2,
     },
     {
-      title: "Moto Proyecto 3",
-      description: "Descripción del proyecto de motos 3",
+      title: "Cirugía Oral",
+      description: "Procedimientos quirúrgicos realizados con máxima precisión y mínimo tiempo de recuperación.",
       imgUrl: projImg3,
     },
+  ];
+
+  const especialidadesProjects = [
     {
-      title: "Moto Proyecto 4",
-      description: "Descripción del proyecto de motos 3",
+      title: "Estética Dental",
+      description: "Procedimientos para mejorar la apariencia de su sonrisa con resultados naturales.",
+      imgUrl: bannerBg,
+    },
+    {
+      title: "Radiografía Digital",
+      description: "Diagnóstico preciso con menor radiación y resultados inmediatos.",
       imgUrl: projImg2,
     },
     {
-      title: "Moto Proyecto 5",
-      description: "Descripción del proyecto de motos 3",
-      imgUrl: projImg1,
+      title: "Sedación Consciente",
+      description: "Técnicas de relajación para pacientes con ansiedad dental durante los tratamientos.",
+      imgUrl: projImg3,
     },
     {
-      title: "Moto Proyecto 6",
-      description: "Descripción del proyecto de motos 3",
-      imgUrl: projImg3,
+      title: "Rehabilitación Oral",
+      description: "Restauración completa de la función y estética de toda su dentadura.",
+      imgUrl: logoImg,
     },
   ];
 
@@ -83,28 +101,44 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>NOS DEDICAMOS A TODO</h2>
-                
+                <h2>Nuestros Servicios</h2>
+                <p>En Denta Vivido ofrecemos una amplia gama de servicios para el cuidado de su salud bucal. Contamos con especialistas y tecnología de vanguardia para garantizar tratamientos de alta calidad.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Autos</Nav.Link>
+                      <Nav.Link eventKey="first">Tratamientos Generales</Nav.Link>
                     </Nav.Item>
-                    
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Motos</Nav.Link>
+                      <Nav.Link eventKey="second">Especialidades</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="third">Servicios Premium</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          autoProjects.map((project, index) => {
+                          autosProjects.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
                                 {...project}
-                              />
+                                />
+                            )
+                          })
+                        }
+                      </Row>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="second">
+                      <Row>
+                        {
+                          motosProjects.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
                             )
                           })
                         }
@@ -113,12 +147,12 @@ export const Projects = () => {
                     <Tab.Pane eventKey="third">
                       <Row>
                         {
-                          motoProjects.map((project, index) => {
+                          especialidadesProjects.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
                                 {...project}
-                              />
+                                />
                             )
                           })
                         }
@@ -135,3 +169,4 @@ export const Projects = () => {
     </section>
   )
 }
+
