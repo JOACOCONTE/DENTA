@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { FaWhatsapp } from "react-icons/fa";
-import headerImg from "../assets/img/Denta op-8.png";
-import bgImage from "../assets/img/1-100.jpg";
+import headerImg from "../assets/img/PNG Arte en Joyas.png";
+import bgImage from "../assets/img/Portada.jpg";
 import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
@@ -12,33 +12,30 @@ export const Banner = () => {
       {/* Imagen de fondo tenue */}
       <div className="banner-background"></div>
       
-      {/* Elementos decorativos */}
-      <div className="shape-1"></div>
-      <div className="shape-2"></div>
-      <div className="shape-3"></div>
-      <div className="shape-4"></div>
+     
       
       <Container style={{ position: 'relative', zIndex: 1 }}>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={5}>
-            <div className="banner-img-wrapper">
-              <img src={headerImg} alt="Header Img" />
-            </div>
-          </Col>
+          
           <Col xs={12} md={6} xl={7}>
             <div className="banner-content">
-              <span className="tagline">Bienvenido a Denta Service</span>
+              <span className="tagline">Bienvenido a Arte en Joyas</span>
               <h1>
-                Responsabilidad y Transparencia
+                Orfebrería y Reparación de Joyas
                 <br />
-                <span className="wrap">Servicio Técnico Ventas y Diseño</span>
+                <span className="wrap">Diseños Artesanales</span>
               </h1>
               <p>
-                Extendé la vida útil de tu equipo y garantizá un rendimiento óptimo con nuestros servicios especializados en máquinas odontológicas.
+                Extendé la vida útil de tus joyas y garantizá un rendimiento óptimo con nuestros servicios especializados en orfebrería.
               </p>
-              <button onClick={() => window.open("https://wa.me/+5493525312516", "_blank")}>
-                Solicitar Servicio <FaWhatsapp size={25} />
+              <button onClick={() => window.open("https://wa.me/+5493525306926", "_blank")}>
+                Consultar ahora <FaWhatsapp size={25} />
               </button>
+            </div>
+          </Col>
+          <Col xs={12} md={6} xl={5}>
+            <div className="banner-img-wrapper">
+              <img src={headerImg} alt="Logo Arte en Joyas" style={{maxWidth: '650px', boxShadow: '0 4px 16px rgba(0,0,0,0.15)'}} />
             </div>
           </Col>
         </Row>

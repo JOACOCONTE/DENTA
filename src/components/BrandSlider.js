@@ -1,92 +1,47 @@
+
 import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { FaSyringe, FaStethoscope, FaHospital, FaUserMd } from 'react-icons/fa';
-import nardiLogo from "../assets/img/brands/10001.jpg";
 
 export const BrandSlider = () => {
-  // Lista de las 5 principales marcas con iconos y nombres
-  const brands = [
-    { 
-      image: nardiLogo, 
-      name: "Nardi Herrero", 
-      description: "Especialistas en equipamiento odontológico integral",
-      isImage: true
-    },
-    { 
-      icon: <FaSyringe size={80} />, 
-      name: "Grimberg Dentales", 
-      description: "Líder en insumos y materiales dentales de alta calidad",
-      isImage: false
-    },
-    { 
-      icon: <FaStethoscope size={80} />, 
-      name: "Suizo Argentina", 
-      description: "Tecnología e innovación en instrumental médico-odontológico",
-      isImage: false
-    },
-    { 
-      icon: <FaHospital size={80} />, 
-      name: "Fadent", 
-      description: "Soluciones completas para clínicas odontológicas",
-      isImage: false
-    },
-    { 
-      icon: <FaUserMd size={80} />, 
-      name: "Dental Medrano", 
-      description: "Pioneros en materiales dentales de precisión",
-      isImage: false
-    }
-  ];
-
   return (
-    <section className="brands-section" id="brands">
-      <Container>
-        <Row className="text-center mb-5">
-          <Col>
-            <div className="fade-in">
-              <h2>Marcas de Confianza</h2>
-              <p className="section-subtitle">
-                Trabajamos con los mejores distribuidores del mercado odontológico en Argentina para brindar calidad y confianza.
+    <section className="location-section" id="ubicacion">
+      <div className="location-block fade-in-block">
+        <Container>
+          <Row className="location-row">
+            <Col md={6} className="location-info">
+              <h2 className="location-title">¿Dónde estamos?</h2>
+              <p className="location-address">
+                <strong>Dirección:</strong> Ing. Olmos 183, X5220 Jesus María, Córdoba
               </p>
-            </div>
-          </Col>
-        </Row>
-
-        <Row className="brand-cards-row">
-          {brands.map((brand, index) => (
-            <Col xs={12} sm={6} md={4} lg={4} xl={2} className="mb-4 brand-card-col" key={index}>
-              <div className={`brand-card fade-in-delay ${index === 0 ? 'nardi-card' : ''}`}>
-                <div className="brand-card-icon">
-                  {brand.isImage ? (
-                    <img src={brand.image} alt={brand.name} className="brand-logo-img" />
-                  ) : (
-                    brand.icon
-                  )}
-                </div>
-                <h3 className="brand-card-title">{brand.name}</h3>
-                <p className="brand-card-description">{brand.description}</p>
+              <div className="location-hours">
+                <h4>Horarios de atención</h4>
+                <ul>
+                  <li><strong>Lunes a Sábado:</strong> 9:00 - 12:30 / 17:00 - 20:30</li>
+                  <li><strong>Domingos:</strong> Cerrado</li>
+                </ul>
+              </div>
+              <p className="location-contact">
+                <strong>Teléfono:</strong> <a href="tel:+5493525306926">+54 9 3525 306926</a><br/>
+                <strong>Email:</strong> <a href="mailto:ruben_badia22@gmail.com">ruben_badia22@gmail.com</a>
+              </p>
+            </Col>
+            <Col md={6} className="location-map">
+              <div className="map-embed">
+                <iframe
+                  title="Mapa ubicación Arte en Joyas"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.123456789!2d-64.100000!3d-30.981111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432e7e7e7e7e7e7%3A0xabcdefabcdefabcd!2sIng.%20Olmos%20183%2C%20Jes%C3%BAs%20Mar%C3%ADa%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1694012345678!5m2!1ses!2sar"
+                  width="100%"
+                  height="320"
+                  style={{ border: 0, borderRadius: '16px', boxShadow: '0 8px 32px rgba(61,128,104,0.15)' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </Col>
-          ))}
-        </Row>
-
-        <Row className="cta-row">
-          <Col md={12} className="text-center">
-            <div className="fade-in cta-container">
-              <h3>¿Necesitas un servicio técnico de confianza?</h3>
-              <p>Estamos listos para brindar soluciones profesionales a tus equipos odontológicos en Córdoba, Argentina</p>
-              <a href="https://wa.me/+5493525312516" className="cta-button" target="_blank" rel="noopener noreferrer">
-                <span>Contáctanos Ahora</span>
-                <div className="icon">
-                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-                    <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" fill="currentColor"></path>
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+          </Row>
+        </Container>
+      </div>
     </section>
   );
-}; 
+};

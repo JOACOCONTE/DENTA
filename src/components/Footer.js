@@ -1,29 +1,31 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaWhatsapp, FaInstagram, FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from "react-icons/fa";
-import logoImg from "../assets/img/Denta Vivido logo 1-8.png";
+import { FaWhatsapp, FaInstagram, FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
+import logoImg from "../assets/img/PNG Arte en Joyas.png";
 import { PopUp } from "./PopUp";
 
 export const Footer = () => {
   const [showPrivacyPopup, setShowPrivacyPopup] = useState(false);
   const [showTermsPopup, setShowTermsPopup] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
+  const [showPowerPopup, setShowPowerPopup] = useState(false);
   
   const privacyContent = (
     <div>
       <p>
-        En Denta Service, protegemos la privacidad de nuestros clientes. 
-        La información personal se utiliza únicamente para mejorar 
-        nuestros servicios.
+        En Arte en Joyas, valoramos la confianza de nuestros clientes.  
+        La información personal se utiliza únicamente para brindar una mejor 
+        experiencia en la adquisición y diseño de nuestras joyas.
       </p>
       <h5>Información que recopilamos:</h5>
       <ul>
         <li>Datos de contacto</li>
-        <li>Información sobre equipos</li>
-        <li>Registros de servicios</li>
+        <li>Preferencias de diseño y estilo</li>
+        <li>Historial de compras</li>
       </ul>
-      <p>No compartimos su información con terceros sin su consentimiento.</p>
+      <p>No compartimos su información con terceros sin su autorización.</p>
     </div>
+
   );
   
   const termsContent = (
@@ -38,8 +40,7 @@ export const Footer = () => {
       </p>
       <h5>Pagos:</h5>
       <p>
-        Se requiere un pago del 50% al iniciar el servicio y el saldo restante al completar 
-        la reparación.
+        Trabajamos sin Seña.
       </p>
     </div>
   );
@@ -50,30 +51,39 @@ export const Footer = () => {
         <FaPhone size={18} style={{ color: "var(--primary)", marginRight: "10px" }} />
         <div>
           <h5>Teléfono</h5>
-          <p>(+54) 9 3525 40-4645</p>
+          <p>(+54) 9 3525 30-6926</p>
         </div>
       </div>
       <div className="popup-contact-item">
         <FaEnvelope size={18} style={{ color: "var(--primary)", marginRight: "10px" }} />
         <div>
           <h5>Email</h5>
-          <p>contacto@dentaservice.com.ar</p>
+          <p>ruben_badia22@gmail.com</p>
         </div>
       </div>
       <div className="popup-contact-item">
         <FaMapMarkerAlt size={18} style={{ color: "var(--primary)", marginRight: "10px" }} />
         <div>
           <h5>Dirección</h5>
-          <p>Córdoba, Argentina</p>
+          <p>Ing.Olmos 183, Jesus Maria,Córdoba, Argentina</p>
         </div>
       </div>
       <div className="popup-contact-item">
         <FaWhatsapp size={18} style={{ color: "var(--primary)", marginRight: "10px" }} />
         <div>
           <h5>WhatsApp</h5>
-          <p>(+54) 9 3525 40-4645</p>
+          <p>(+54) 9 3525 30-6926</p>
         </div>
       </div>
+    </div>
+  );
+
+  const powerContent = (
+    <div>
+      <h5>LinkedIn</h5>
+      <a href="https://www.linkedin.com/in/joaquinconte" target="_blank" rel="noopener noreferrer" style={{ color: "var(--primary)", fontWeight: "bold" }}>
+        www.linkedin.com/in/joaquinconte
+      </a>
     </div>
   );
 
@@ -87,16 +97,14 @@ export const Footer = () => {
                 <img src={logoImg} alt="Denta Service Logo" />
               </div>
               <p className="footer-description">
-                Denta Service es tu aliado confiable en el mantenimiento y reparación 
-                de equipos odontológicos. Nos comprometemos con la excelencia y la 
-                satisfacción de nuestros clientes.
+                Arte en Joyas es tu taller de confianza para la creación, restauración y reparación de joyas. Nos comprometemos con la excelencia, el cuidado y la satisfacción de nuestros clientes.
               </p>
               <div className="social-links">
-                <a href="https://instagram.com/dentaservicejm" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://instagram.com/arteenjoyasrb" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaInstagram />
                 </a>
-                <a href="https://wa.me/+5493525312516" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <FaWhatsapp />
+                <a href="https://www.facebook.com/elorfebre.rb?locale=es_LA" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaFacebook style={{ fontSize: "1.5em", color: "#e1ebec" }} />
                 </a>
               </div>
             </Col>
@@ -107,21 +115,21 @@ export const Footer = () => {
                   <FaPhone className="info-icon" />
                   <div className="info-content">
                     <h5>Teléfono</h5>
-                    <p>(+54) 9 3525 40-4645</p>
+                    <p>(+54) 9 3525 30-6926</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <FaEnvelope className="info-icon" />
                   <div className="info-content">
                     <h5>Email</h5>
-                    <p>contacto@dentaservice.com.ar</p>
+                    <p>ruben_badia22@hotmail.com</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <FaMapMarkerAlt className="info-icon" />
                   <div className="info-content">
                     <h5>Dirección</h5>
-                    <p>Córdoba, Argentina</p>
+                    <p>Ing. Olmos 183, Jesus María, Córdoba, Argentina</p>
                   </div>
                 </div>
               </div>
@@ -133,20 +141,20 @@ export const Footer = () => {
                   <FaClock className="info-icon" />
                   <div className="info-content">
                     <div className="schedule-item">
-                      <span>Lunes a Viernes</span>
-                      <span>9:00 AM - 6:00 PM</span>
+                      <span>Lunes a Sábado </span>
+                      <span> 9:00 - 12:30 / 17:00 - 20:30</span>
                     </div>
                     <div className="schedule-item">
-                      <span>Sábados</span>
-                      <span>9:00 AM - 1:00 PM</span>
+                      <span>Domingos</span>
+                      <span>Cerrado</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="emergency-service">
-                <h5>¿Emergencias?</h5>
-                <a href="https://wa.me/+5493525312516" className="emergency-button">
-                  <FaWhatsapp /> Contacto 24/7
+                <h5>¿Consultas urgentes?</h5>
+                <a href="https://wa.me/+5493525306926" className="emergency-button">
+                  <FaWhatsapp /> WhatsApp directo
                 </a>
               </div>
             </Col>
@@ -158,11 +166,12 @@ export const Footer = () => {
           <Row>
             <Col xs={12}>
               <div className="footer-copyright">
-                <p>© {new Date().getFullYear()} Denta Service. Todos los derechos reservados.</p>
+                <p>© {new Date().getFullYear()} Arte en Joyas. Todos los derechos reservados.</p>
                 <div className="footer-links">
                   <a href="#privacy" onClick={(e) => { e.preventDefault(); setShowPrivacyPopup(true); }}>Privacidad</a>
                   <a href="#terms" onClick={(e) => { e.preventDefault(); setShowTermsPopup(true); }}>Términos</a>
                   <a href="#contact" onClick={(e) => { e.preventDefault(); setShowContactPopup(true); }}>Contacto</a>
+                  <a href="#power" onClick={(e) => { e.preventDefault(); setShowPowerPopup(true); }}>Power by Joaquín Conte</a>
                 </div>
               </div>
             </Col>
@@ -190,6 +199,13 @@ export const Footer = () => {
         handleClose={() => setShowContactPopup(false)} 
         title="Contáctanos" 
         content={contactContent} 
+      />
+      
+      <PopUp 
+        show={showPowerPopup} 
+        handleClose={() => setShowPowerPopup(false)} 
+        title="Power by Joaquín Conte" 
+        content={powerContent} 
       />
     </footer>
   );
